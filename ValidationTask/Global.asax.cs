@@ -12,7 +12,16 @@ namespace ValidationTask
     {
         protected void Application_Start(object sender, EventArgs e)
         {
-            
+            string JQueryVer = "2.1.4";
+            ScriptManager.ScriptResourceMapping.AddDefinition("jquery", new ScriptResourceDefinition
+            {
+                Path = "~/Scripts/jquery-" + JQueryVer + ".min.js",
+                DebugPath = "~/Scripts/jquery-" + JQueryVer + ".js",
+                CdnPath = "http://ajax.aspnetcdn.com/ajax/jQuery/jquery-" + JQueryVer + ".min.js",
+                CdnDebugPath = "http://ajax.aspnetcdn.com/ajax/jQuery/jquery-" + JQueryVer + ".js",
+                CdnSupportsSecureConnection = true,
+                LoadSuccessExpression = "window.jQuery"
+            });
         }
     }
 }

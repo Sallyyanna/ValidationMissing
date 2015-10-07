@@ -23,6 +23,7 @@
         <asp:Button ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click" />    </div>
         <div id="divSuccess" runat="server" visible="false">
             <p>Success! You have now registered.</p>
+           
         </div>
     </form>
 </body>
