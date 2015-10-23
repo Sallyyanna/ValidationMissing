@@ -16,15 +16,10 @@ namespace ValidationTask
 
         protected void btnCalculate_Click(object sender, EventArgs e)
         {
-            Decimal monthly = Decimal.Parse(txtSalary.Text) / 12.0m;
-            if (monthly >= 0 && monthly <= 200000000)
-            {
-                litSalary.Text = "<p>Your monthly salary is £" + monthly.ToString("0.00") + "</p>";
-            }
-            else
-            {
-                throw new Exception("Invalid salary amount");
-            }
+            Decimal annual = Decimal.Parse(txtSalary.Text);
+            DataProcessor processor = new DataProcessor();
+            var monthly = processor.MonthlySalaryFromAnnual(annual);
+            litSalary.Text = "<p>Your monthly salary is £" + monthly.ToString("0.00") + "</p>";   
         }
     }
 }
