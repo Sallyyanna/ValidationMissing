@@ -103,6 +103,7 @@
     <Compile Include="ComplexForm.aspx.designer.cs">
       <DependentUpon>ComplexForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DataProcessor.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

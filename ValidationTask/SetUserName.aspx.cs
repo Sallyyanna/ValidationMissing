@@ -16,15 +16,10 @@ namespace ValidationTask
 
         protected void btnSetUsername_Click(object sender, EventArgs e)
         {
-            if (txtName.Text.Length == 0)
-            {
-                throw new Exception("Invalid username");
-            }
-            else
-            {
-                divSetUserName.Visible = false;
-                divSuccess.Visible = true;
-            }
+            DataProcessor processor = new DataProcessor();
+            processor.SetUserName(txtName.Text);
+            divSetUserName.Visible = false;
+            divSuccess.Visible = true;
         }
     }
 }
