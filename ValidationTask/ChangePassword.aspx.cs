@@ -16,15 +16,10 @@ namespace ValidationTask
 
         protected void btnChangePassword_Click(object sender, EventArgs e)
         {
-            if (txtOldPassword.Text == txtNewPassword.Text || txtOldPassword.Text == txtConfirmNewPassword.Text)
-            {
-                throw new Exception("Password not new");
-            }
-            else {
-                divSuccess.Visible = true;
-                divChangePassword.Visible = false;
-            }
-
+            DataProcessor processor = new DataProcessor();
+            processor.ChangePassword(txtOldPassword.Text, txtNewPassword.Text, txtConfirmNewPassword.Text);
+            divSuccess.Visible = true;
+            divChangePassword.Visible = false;
         }
     }
 }

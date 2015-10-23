@@ -16,32 +16,10 @@ namespace ValidationTask
 
         protected void btnPhoneRegister_Click(object sender, EventArgs e)
         {
-            //check length
-            if (txtPhone.Text.Length != 11)
-            {
-                throw new Exception("Error registering for phone notifications - invalid length");
-            }
-
-            //check all digits
-            var allNumbers = true;
-            foreach (var digit in txtPhone.Text)
-            {
-                int number;
-                if (!int.TryParse(digit.ToString(), out number))
-                {
-                    allNumbers = false;
-                }
-            }
-
-            if (!allNumbers)
-            {
-                throw new Exception("Error registering for phone notifications - non numeric character in number");
-            }
-
-            //otherwise OK
+            var processor = new DataProcessor();
+            processor.SetPhone(txtPhone.Text);
             divRegister.Visible = false;
             divSuccess.Visible = true;
-
         }
     }
 }

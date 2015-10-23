@@ -11,7 +11,7 @@ namespace ValidationTask
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            new DataProcessor().ComplexRegistration(txtUser.Text, txtEmail.Text, txtPassword.Text, txtConfirmPassword.Text, txtDate.Text);
         }
     }
 }

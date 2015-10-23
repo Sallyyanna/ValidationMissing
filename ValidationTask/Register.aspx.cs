@@ -16,15 +16,10 @@ namespace ValidationTask
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-            if (txtPassword.Text != txtConfirmPassword.Text)
-            {
-                throw new Exception("Mismatched password error");
-            }
-            else
-            {
-                divRegister.Visible = false;
-                divSuccess.Visible = true;
-            }
+            DataProcessor processor = new DataProcessor();
+            processor.RegisterUser(txtUser.Text, txtPassword.Text, txtConfirmPassword.Text);
+            divRegister.Visible = false;
+            divSuccess.Visible = true;
         }
     }
 }

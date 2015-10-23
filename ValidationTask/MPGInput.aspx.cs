@@ -20,15 +20,11 @@ namespace ValidationTask
             var extraUrban = Decimal.Parse(txtExtraUrban.Text);
             var combined = Decimal.Parse(txtCombined.Text);
 
-            if (urban < combined && combined < extraUrban)
-            {
-                divInputMPG.Visible = false;
-                divSuccess.Visible = true;
-            }
-            else
-            {
-                throw new Exception("Invalid MPG values detected, maybe you have a Volkswagen");
-            }
+            DataProcessor processor = new DataProcessor();
+            processor.SetMPG(urban, combined, extraUrban);
+            divInputMPG.Visible = false;
+            divSuccess.Visible = true;
+
         }
     }
 }
