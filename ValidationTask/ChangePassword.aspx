@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
    
-        <p class="notice">In the form below, ensure that the user's cannot enter the same as their old one.</p>
+        <p class="notice">In the form below, ensure that the user cannot enter the same password as their old one.</p>
     <div id="divChangePassword" runat="server">
         <asp:Label ID="lblOldPassword" runat="server" Text="Name" AssociatedControlID="txtOldPassword"></asp:Label>
         <asp:TextBox ID="txtOldPassword" runat="server" TextMode="Password"></asp:TextBox>
